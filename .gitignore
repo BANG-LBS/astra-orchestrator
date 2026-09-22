@@ -1,0 +1,27 @@
+# Personal configuration and secrets
+config.toml
+.env
+.env.*
+*.key
+*.pem
+*.secret
+
+# Local development and backups
+.stage/
+backups/
+*.bak
+*.tmp
+*.log
+
+# Private evaluation materials
+private/
+test-data/
+raw-data/
+reports/
+outputs/
+work/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
