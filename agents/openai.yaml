@@ -1,0 +1,7 @@
+interface:
+  display_name: "Astra 智能编排"
+  short_description: "显式启用 Astra root，并由 Luna/Terra 受控分工"
+  default_prompt: "使用 $astra-orchestrator 处理这个任务，并仅在委派有明确收益时启动子代理。"
+
+policy:
+  allow_implicit_invocation: false
