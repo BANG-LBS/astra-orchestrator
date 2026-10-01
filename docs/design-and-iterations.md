@@ -77,6 +77,14 @@ GPT-6 Sol 和 GPT-6 Luna 推出后，子任务模型从 GPT-5.6 Luna／Terra 更
 
 用户决定不再追加验证实验，后续根据真实业务反馈迭代。完整方法和限制见[个人真实案例测试](../examples/real-world-evaluation.md)。
 
+## 10. V2.1：将 Sol 子模型更新为 GPT-6.1 Sol
+
+2026年10月1日，按用户选择，把当前 Sol 子任务的请求标识从 `gpt-6-sol` 改为 `gpt-6.1-sol`。GPT-6 Astra 继续负责主控，GPT-6 Luna 继续处理清晰、可重复、可独立验证的工作；复杂任务和一次 Luna 升级使用 GPT-6.1 Sol。Sol 默认请求 `medium`，深度审查和复杂实现等任务请求 `xhigh`，其余编排与持续门控规则沿用原版。
+
+[GPT-6.1 Sol 官方模型页](https://developers.openai.com/api/docs/models/gpt-6.1-sol)支持这些思考强度。按2026年10月1日核对的 Standard API 文本价格，普通输入和输出仍为每百万 token 2美元和10美元，缓存输入为0.10美元；[GPT-6 Sol](https://developers.openai.com/api/docs/models/gpt-6-sol)的对应缓存输入价为0.20美元。这些是 API 单价，不用于换算订阅额度。
+
+按用户要求，此次更新不新增模型对照或路由实测，仅做文件格式与一致性检查。V2 的历史实验继续保留当时使用的 GPT-6 Sol 名称、单价和结果。
+
 ## 最终形成的能力
 
 经过这些迭代，Skill 的重点不再是“尽可能多地派出子代理”，而是让 Astra 判断什么时候值得委派、给 child 多少上下文、何时需要升级，以及最终应该验证到什么程度。它把这些原本需要用户写进复杂提示词的要求，收进了一套可重复使用的工作流程。
