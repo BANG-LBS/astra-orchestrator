@@ -1,6 +1,6 @@
 ---
 name: astra-orchestrator
-description: Explicit Astra-root orchestration for a task and its follow-ups, routing bounded work to GPT-6 Luna or Sol by task difficulty. Use only after the user invokes $astra-orchestrator with GPT-6 Astra.
+description: Explicit Astra-root orchestration for a task and its follow-ups, routing bounded work to GPT-6 Luna or GPT-6.1 Sol by task difficulty. Use only after the user invokes $astra-orchestrator with GPT-6 Astra.
 ---
 
 # Astra 智能编排
@@ -24,10 +24,10 @@ description: Explicit Astra-root orchestration for a task and its follow-ups, ro
 ## Child routing
 
 - For work already judged worth delegating, explicitly request `gpt-6-luna` for clear, repeatable, narrowly scoped tasks with verifiable results.
-- Explicitly request `gpt-6-sol` directly for bounded tasks that clearly need substantial planning, multi-step tool use, complex implementation, or deep validation. Do not run such tasks through Luna solely to follow a fixed sequence.
+- Explicitly request `gpt-6.1-sol` directly for bounded tasks that clearly need substantial planning, multi-step tool use, complex implementation, or deep validation. Do not run such tasks through Luna solely to follow a fixed sequence.
 - If Luna is unavailable or its spawn fails, the root may send the task directly to Sol. If a Luna result is blocked or materially incomplete, review the missing evidence and escalate only the unfinished or disputed scope to Sol at most once. Do not create an automatic retry loop. If Sol is unavailable or its result remains incomplete, the Astra root handles what it can and reports any concrete blocker.
 - Do not use Astra as a child agent for ordinary work.
-- Explicitly request `max` reasoning effort for GPT-6 Luna children by default. For GPT-6 Sol, request `medium` by default and `xhigh` upfront for deep reviews, complex implementations, or comparably demanding bounded tasks. Honor a different user-specified supported effort. These are this skill's quality-first choices, not claims of quota savings.
+- Explicitly request `max` reasoning effort for GPT-6 Luna children by default. For GPT-6.1 Sol, request `medium` by default and `xhigh` upfront for deep reviews, complex implementations, or comparably demanding bounded tasks. Honor a different user-specified supported effort. These are this skill's quality-first choices, not claims of quota savings.
 - Assign one clear owner to each subtask. Do not ask multiple agents to repeat the same work unless independent verification is intentional.
 
 ## Child context and lifecycle

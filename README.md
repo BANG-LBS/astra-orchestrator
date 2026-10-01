@@ -2,9 +2,11 @@
 
 [中文说明](README.zh-CN.md)
 
-A Codex skill created by **BANG-S**. Version 2 lets users describe a clear goal while GPT-6 Astra decides which work to handle itself and which bounded tasks to delegate to GPT-6 Luna or GPT-6 Sol.
+A Codex skill created by **BANG-S**. Version 2.1 lets users describe a clear goal while GPT-6 Astra decides which work to handle itself and which bounded tasks to delegate to GPT-6 Luna or GPT-6.1 Sol.
 
 > This is an independent project by BANG-S and is not an official OpenAI product.
+
+V2.1 replaces the Sol child model with `gpt-6.1-sol`. The routing criteria and reasoning defaults stay the same. This model update does not include a new comparison run.
 
 ## Why
 
@@ -15,7 +17,7 @@ This skill adds a cost-aware orchestration policy:
 - Astra first decides whether delegation has a clear benefit.
 - Short or tightly coupled work stays with the root.
 - Clear, repeatable, independently verifiable work goes to GPT-6 Luna.
-- Work that clearly needs substantial planning, multi-step execution, or deep validation goes directly to GPT-6 Sol.
+- Work that clearly needs substantial planning, multi-step execution, or deep validation goes directly to GPT-6.1 Sol.
 - A blocked or materially incomplete Luna result may be escalated once to Sol after the gap is reviewed.
 - Child agents receive the smallest sufficient context and return compact evidence.
 - The Astra root remains responsible for integration, proportionate verification, and the final answer.
@@ -67,7 +69,7 @@ GPT-6 Astra root
     ├─ completes short or tightly coupled work directly
     └─ delegates suitable bounded work
           ├─ GPT-6 Luna for clear, repeatable work
-          └─ GPT-6 Sol for demanding work or a Luna escalation
+          └─ GPT-6.1 Sol for demanding work or a Luna escalation
 ```
 
 The skill does not force a fixed number of child agents. This project's quality-first policy requests Luna `max`; Sol starts at `medium`, with `xhigh` for deep reviews, complex implementations, or similarly demanding bounded work. Users may explicitly choose another supported effort. These are project choices, not a guarantee of lower quota usage. Ordinary child agents do not recursively spawn more agents unless the root explicitly authorizes that for a named task.
@@ -84,6 +86,8 @@ The skill does not force a fixed number of child agents. This project's quality-
 ## Personal real-world evaluation
 
 The September 2026 V2 comparison used the same original workbook, a concise business prompt, and GPT-6 Astra `xhigh`, with the native group followed by the skill-assisted group. The task was to analyze 30 high-converting Xiaohongshu posts for an unspecified product.
+
+That run used GPT-6 Sol. Its recorded usage and costs remain a historical V2 result, not a measurement of the V2.1 model update.
 
 | Observed result | Native Astra | Astra + V2 |
 | --- | --- | --- |
