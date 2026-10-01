@@ -42,4 +42,4 @@ For `blocked`, add every currently known independent blocker:
 - Order blockers by dependency and impact. Mark exactly one as `primary: true` and place it first; do not hide additional independent blockers.
 - Put speculative or merely possible obstacles under `risks`; do not present them as blockers.
 - Omit optional fields that would otherwise be empty.
-- Do not return raw logs, full files, repeated context, or chain-of-thought unless the root explicitly requests the underlying material.
+- Do not return raw logs, full files, or repeated context unless the root explicitly requests the underlying material. Return concise conclusions and evidence, not private chain-of-thought.
