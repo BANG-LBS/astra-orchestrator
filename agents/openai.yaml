@@ -1,6 +1,6 @@
 interface:
   display_name: "Astra 智能编排"
-  short_description: "V2：显式启用 Astra root，按任务难度选择 GPT-6 Luna 或 Sol"
+  short_description: "V2.1：Astra 主控，按任务难度委派 GPT-6 Luna 或 GPT-6.1 Sol"
   default_prompt: "使用 $astra-orchestrator 处理这个任务，并仅在委派有明确收益时启动子代理。"
 
 policy:
